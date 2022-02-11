@@ -15,10 +15,16 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am a telecommunications engineer about to finish a master's program and very eager and motivated to enter the working world.
+I am a telecommunications engineer, currently finishing my Master's program. 
 
-<!-- Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<!-- My interests are mainly technologies I studied and I still studying, such as ML/DL, web programming or cloud/serverless computing, and other technologies, which I know at a basic level, but would love to study deeply, such as Blockchain or NoSQL databases. It is very important to highlight, the hobby I have since I can remember: mathematics and puzzles (one of my favorites are [TedX riddles](https://www.youtube.com/watch?v=N5vJSNXPEwA&list=PLJicmE8fK0EiFRt1Hm5a_7SJFaikIFW30&ab_channel=TED-Ed)). Finally, I do sports (mostly gym) an average of 5 times a week. -->
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I started working as a Robotics teacher for elementary school children between 2017 and 2019. Then I worked on the CAVIAR project at GTHAU (Speech Technology and Machine Learning Group) designing, developing and evaluating deep neural networks for the identification and modification of emotional elements on faces in images.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](http://fortawesome.github.io/Font-Awesome/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them. -->
+Switching contexts, I started developing a Human Resources web platform in a start-up, The Wise Seeker. As a Full-Stack developer I learned technologies with a great future such as Angular, FastAPI or GoogleCloud. However, I was even more fascinated by the speed and flexibility of the environment in which I worked.
+
+Currently, I am studying, developing and evaluating multi-objective optimization tools as an intern of the Cabify chair at ETSIT UPM. This allows me to continue learning about applied statistics and programming while making the most of my data science and machine learning subjects.
+
+I believe that technology is the key to progress. Therefore, my main interests are technologies that I believe have a great present and future impact, such as ML/DL, web programming, cloud/serverless computing, blockchain or NoSQL. My goal is to use these technologies to develop products that can improve people's lives and society. Consequently, I would like to work in one of the world's most innovative technology companies in my sector.
+
+
