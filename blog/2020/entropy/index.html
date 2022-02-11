@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <meta http-equiv="refresh" content="3; url=https://MiguelTaibo.github.io/" />
+    
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +12,7 @@
   Miguel Taibo Martínez
 
 
-  | Page not found
+  | Entropy and Differential Entropy
 
 </title>
 <meta name="description" content="A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -38,7 +38,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>M</text></svg>">
 
 <link rel="stylesheet" href="/assets/css/main.css">
-<link rel="canonical" href="https://migueltaibo.github.io/404.html">
+<link rel="canonical" href="https://migueltaibo.github.io/blog/2020/entropy/">
 
 
 <!-- Dark Mode -->
@@ -80,7 +80,7 @@
           </li>
           
           <!-- Blog -->
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/blog/">
               blog
               
@@ -136,17 +136,97 @@
     <!-- Content -->
 
     <div class="container mt-5">
-      <div class="post">
+      
+
+
+
+
+
+<div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">Page not found</h1>
-    <p class="post-description">Looks like there has been a mistake. Nothing exists here.</p>
+    <h1 class="post-title">Entropy and Differential Entropy</h1>
+    <p class="post-meta">February 11, 2020</p>
+    <p class="post-tags">
+      <a href="/blog/2020"> <i class="fas fa-calendar fa-sm"></i> 2020 </a>
+      
+
+      
+
+    </p>
   </header>
 
-  <article>
-    <p>You will be redirected to the main page within 3 seconds. If not redirected, please click <a href="https://MiguelTaibo.github.io/">here</a>.</p>
+  <article class="post-content">
+    <h1 id="entropy">Entropy</h1>
+
+<p>In information theory, the entropy is the information or uncertainty inherent of a random variable.</p>
+
+<p>Imagine we have a random variable \(X\) with \(N\) possible outcomes with probability \(P(x_1), P(x_2), ... P(x_N)\). Entropy of \(X\) is defined as:</p>
+
+<p>\begin{equation}
+    H(X)=-\sum_{i=1}^N P(x_i)\log(P(x_i))
+\end{equation}</p>
+
+<p>Now, imagine with have a continious random variable \(Y\) uniform in between 0 and 1, i.e., \(Y\sim U(0,1)\). Defined by its  probability density function, \(f_Y(y)\):</p>
+
+\[f_Y(y) = \left\{ 
+\begin{matrix}
+0 &amp; y&lt;0 \\
+1 &amp; 0\leq y &lt; 1 \\
+0 &amp; 1 \leq 1 \\
+\end{matrix}    
+\right.\]
+
+<p>It is impossible to define a probability, \(P(y)\), as done before, we would be forcer to define r.v. \(Y\) to be in a neighbourhood of \(y\), \(I=(y-\delta/2,y+\delta/2)\). Therefore, we would have \(P(Y\in I)=\delta\) where \(\delta\to0\), and to cover the hole range of \(Y\) we have \(N=1/\delta\) segments. Therefore, compute the entropy of \(Y\) as:</p>
+
+\[H(Y) = \lim_{\delta\to0}-\sum_{i=1}^{1/\delta} P(Y\in I_i)\log(P(Y\in I_i)) = \lim_{\delta\to0}-\frac1\delta \delta \log(\delta) = -\lim_{\delta\to0}\log(\delta)=\infty\]
+
+<p>As we can see, in order to compute the entropy, we must break the continious random variable \(Y\) into infinite intervals with differential width. This makes the entropy to be infinite always, no matter which random variable we are talking about while it is continious. This motivates the definition of the differential entropy.</p>
+
+<h1 id="differential-entropy">Differential Entropy</h1>
+
+<p>We can prove the previous conclusion by developing the same development made to any continious random variable \(Y\) without restricting it to the 0,1 uniform. Therefore, we have any probability density function, \(f_Y(y)\).</p>
+
+<p>In the same way than before we define \(P(Y\in I)\) with \(I=(y-\delta/2,y+\delta/2)\), and we have that, if \(\delta\to0\)</p>
+
+\[P(Y\in I_i) = \int_{y_i-\delta}^{y_i+\delta} f_Y(\eta)d\eta ~~~ \Rightarrow ~~~ \lim_{\delta\to0} P(Y\in I_i) = \lim_{\delta\to0} \delta f_Y(y_i)\]
+
+<p>(if the neighbourhood is small enough, its probability density can be enough well approximated to a constant). Therefore:</p>
+
+\[H(Y) = -\sum_{\forall i} P(Y\in I_i) \log(P(Y\in I_i) )  \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\]
+
+\[= -\lim_{\delta\to0}\sum_{\forall i} \delta f_Y(\eta) log(\delta f_Y(\eta))d\eta \;\;\;\;\;\;\;\]
+
+\[= -\lim_{\delta\to0}\int_{-\infty}^\infty f_Y(\eta) log(\delta f_Y(\eta))d\eta \;\;\;\;\;\;\;\]
+
+\[\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;=  -\lim_{\delta\to0}\int_{-\infty}^\infty f_Y(\eta) log(f_Y(\eta))d\eta  -\lim_{\delta\to0}\int_{-\infty}^\infty f_Y(\eta) log(\delta)d\eta\]
+
+\[\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;= \int_{-\infty}^\infty f_Y(\eta) log(f_Y(\eta))d\eta -\lim_{\delta\to0} \log(\delta)\int_{-\infty}^\infty f_Y(\eta) d\eta\]
+
+\[= \int_{-\infty}^\infty f_Y(\eta) log(f_Y(\eta))d\eta  -\lim_{\delta\to0} \log(\delta)\]
+
+<p>As we can see, we obtain a formula with two terms, the first one, is a finite value, which depends on the probability density function of \(Y\), \(f_Y(y)\). The second one, infinite, is exactly equal to the one obtained before, when evaluating the entropy of the uniform 0,1 ditribution. Additionally, if we subssitute the probability density function of a 0,1 uniform, we obtain the same expression than before.</p>
+
+<p>We use this result to define the <strong>diferential entropy</strong>, which is, in fact, the entropy compared to a uniform ditribution with width 1:</p>
+
+<p>\begin{equation}
+    h(y)=\mathbf{E}[-\log(f_Y(y))]=-\int_{-\infty}^\infty f_Y(\eta)\log(f_Y(\eta))d\eta
+\end{equation}</p>
+
+<p>Now we are going to get the differential entropy for the most common pdf:</p>
+
+<p>1) given a uniform random variable, \(Y\sim U(a,b)\), its differential entropy is:</p>
+
+\[h(y) = -\int_{-\infty}^\infty f_Y(\eta)\log(f_Y(\eta))d\eta = -\int_{a}^b \frac1{b-a}\log(b-a)d\eta = \log(b-a)\]
+
+<p>2) given a gaussian random variable, \(Y\sim \mathcal N(\mu,\sigma)\), its differential entropy is:</p>
+
+\[h(y) = -\int_{-\infty}^\infty f_Y(\eta)\log(f_Y(\eta))d\eta = -\int_{-\infty}^\infty  \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(\eta-\mu)^2}{2\sigma^2}} \ln\left(\frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(\eta-\mu)^2}{2\sigma^2}}\right) d\eta = \frac12\ln(2\pi e\sigma^2)\]
+
 
   </article>
+
+  
 
 </div>
 
